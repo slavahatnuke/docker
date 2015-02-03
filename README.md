@@ -7,5 +7,6 @@
 
 ## usage
  - `vagrant up`
+ - `vagrant ssh`
  - `sudo su`
  - `docker ps || fig up`
