@@ -3,7 +3,7 @@ VAGRANTFILE_API_VERSION = "2"
 name = "docker"
 memory = "512"
 cpu="2"
-type="nfs"
+type="nfs" # "", "nfs"
 ip = "192.168.10.10"
 home = "/project"
 sync= ".."
@@ -15,7 +15,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
-  config.vm.synced_folder sync, home, type: type
+  if type
+    config.vm.synced_folder sync, home, type: type
+  else
+    config.vm.synced_folder sync, home
+  end
 
   config.vm.network :private_network, ip: ip
 
