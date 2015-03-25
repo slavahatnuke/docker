@@ -6,7 +6,7 @@ cpu="2"
 type="nfs" # "", "nfs"
 ip = "192.168.10.10"
 home = "/project"
-sync= ".."
+sync= "."
 
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
